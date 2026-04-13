@@ -22,12 +22,12 @@ export default function SignalHistory({ patient }: { patient: Patient }) {
   ];
 
   return (
-    <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
-      <div className="text-sm font-semibold text-white mb-4">Signal History — Last 90 Days</div>
+    <div className="bg-white/[0.04] rounded-2xl px-5 py-4 border border-white/[0.06]">
+      <div className="text-sm font-medium text-white mb-4">Signal History — Last 90 Days</div>
       <div className="grid grid-cols-3 gap-4">
         {charts.map(chart => (
           <div key={chart.key}>
-            <div className="text-xs text-gray-500 mb-2">{chart.label}</div>
+            <div className="text-xs text-white/40 mb-2">{chart.label}</div>
             <div className="h-16">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data}>
@@ -40,7 +40,7 @@ export default function SignalHistory({ patient }: { patient: Patient }) {
                     connectNulls={false}
                   />
                   <Tooltip
-                    contentStyle={{ background: '#111827', border: '1px solid #374151', fontSize: 11 }}
+                    contentStyle={{ background: '#111111', border: '1px solid rgba(255,255,255,0.08)', fontSize: 11 }}
                     formatter={(v: unknown) => [`${(v as number)?.toFixed(1)}${chart.suffix}`, chart.label]}
                     labelFormatter={() => ''}
                   />

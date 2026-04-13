@@ -11,7 +11,7 @@ export default function CareDesertView() {
       <div className="flex-1">
         <GeographicMap insights={insights} />
       </div>
-      <div className="w-96 bg-gray-900 border-l border-gray-800 overflow-y-auto">
+      <div className="w-96 bg-[#111111] border-l border-white/[0.06] overflow-y-auto">
         <IntelligenceFeed insights={insights} />
       </div>
     </div>

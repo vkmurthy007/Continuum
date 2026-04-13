@@ -4,43 +4,73 @@ import type { HealthPassportRecord } from '../lib/types';
 import SignalFeed from '../components/passport/SignalFeed';
 import IntegrationDestinations from '../components/passport/IntegrationDestinations';
 import ROICalculator from '../components/passport/ROICalculator';
+import { Shield, X } from 'lucide-react';
 
 const CONDITIONS = ['All', 'ESRD', 'Oncology', 'Post-Discharge', 'I/DD', 'Behavioral Health'];
 
 export default function HealthPassportView() {
   const [condition, setCondition] = useState('All');
+  const [consentDismissed, setConsentDismissed] = useState(false);
 
   const filtered = (records as HealthPassportRecord[]).filter(
     r => condition === 'All' || r.condition === condition
   );
 
   return (
-    <div className="h-full flex flex-col bg-gray-950">
-      <div className="px-6 py-4 border-b border-gray-800">
-        <div className="text-lg font-bold text-white">Health Passport API Explorer</div>
-        <div className="text-xs text-gray-500 mt-1">Real-time SDOH signal feed · B2B data product demonstration</div>
+    <div className="h-full flex flex-col bg-black">
+      <div className="px-6 py-4 border-b border-white/[0.06]">
+        <div className="text-lg font-semibold text-white">Health Passport API Explorer</div>
+        <div className="text-xs text-white/40 mt-1">Real-time SDOH signal feed · B2B data product demonstration</div>
       </div>
 
-      <div className="flex-1 overflow-hidden flex">
+      {/* CCPA / Consent notice */}
+      {!consentDismissed && (
+        <div className="mx-4 mt-3 flex items-start gap-3 bg-white/[0.04] border border-white/[0.08] rounded-2xl px-4 py-3">
+          <Shield size={15} className="text-white/40 mt-0.5 flex-shrink-0" />
+          <div className="flex-1">
+            <span className="text-xs font-medium text-white/80">Data Use & Consent Notice </span>
+            <span className="text-xs text-white/40 leading-relaxed">
+              In production, patients would be notified under{' '}
+              <strong className="text-white/60">CCPA (California)</strong> that their transportation
+              behavior is being analyzed and shared with care partners. Behavioral health data would
+              be governed separately under{' '}
+              <strong className="text-white/60">42 CFR Part 2</strong>.{' '}
+              All records in this demo are fictional — no real patient consent is required or implied.
+              Export destinations shown are illustrative only; no data leaves this browser.
+            </span>
+          </div>
+          <button onClick={() => setConsentDismissed(true)} className="text-white/25 hover:text-white/60 transition-colors flex-shrink-0">
+            <X size={14} />
+          </button>
+        </div>
+      )}
+
+      <div className="flex-1 overflow-hidden flex mt-3">
         {/* Left: population selector */}
-        <div className="w-48 bg-gray-900 border-r border-gray-800 p-4">
-          <div className="text-xs text-gray-500 uppercase tracking-wider mb-3">Population</div>
+        <div className="w-48 bg-[#111111] border-r border-white/[0.06] p-4">
+          <div className="text-xs text-white/40 uppercase tracking-wider mb-3">Population</div>
           {CONDITIONS.map(c => (
             <button
               key={c}
               onClick={() => setCondition(c)}
-              className={`w-full text-left text-sm px-3 py-2 rounded-lg mb-1 transition-colors ${
+              className={`w-full text-left text-sm px-3 py-2 rounded-xl mb-1 transition-colors ${
                 condition === c
-                  ? 'bg-gray-800 text-white font-medium'
-                  : 'text-gray-500 hover:text-gray-300 hover:bg-gray-800/50'
+                  ? 'bg-white/[0.08] text-white font-medium'
+                  : 'text-white/40 hover:text-white/80 hover:bg-white/[0.04]'
               }`}
             >
               {c}
             </button>
           ))}
-          <div className="mt-4 pt-4 border-t border-gray-800">
-            <div className="text-xs text-gray-600">Active signals</div>
-            <div className="text-2xl font-mono font-bold text-white">{filtered.length}</div>
+          <div className="mt-4 pt-4 border-t border-white/[0.06]">
+            <div className="text-xs text-white/25">Active signals</div>
+            <div className="text-2xl font-mono font-semibold text-white">{filtered.length}</div>
+          </div>
+          <div className="mt-3 pt-3 border-t border-white/[0.06]">
+            <div className="flex items-center gap-1.5 text-xs text-white/20">
+              <Shield size={10} />
+              <span>Demo data only<br />No real PHI</span>
+            </div>
           </div>
         </div>
 
@@ -50,7 +80,7 @@ export default function HealthPassportView() {
         </div>
 
         {/* Right: integrations + ROI */}
-        <div className="w-80 border-l border-gray-800 overflow-y-auto bg-gray-900/50">
+        <div className="w-80 border-l border-white/[0.06] overflow-y-auto bg-[#111111]">
           <IntegrationDestinations />
           <ROICalculator />
         </div>

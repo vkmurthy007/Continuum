@@ -4,6 +4,44 @@
 
 @layer base {
   body {
-    @apply bg-gray-950 text-gray-100 font-sans;
+    @apply bg-black text-gray-100;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-white/[0.06];
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
+
+@layer components {
+  /* Apple-style vibrancy card */
+  .apple-card {
+    @apply bg-white/[0.05] border border-white/[0.08] rounded-2xl backdrop-blur-sm;
+  }
+
+  /* Subtle divider */
+  .apple-divider {
+    @apply border-white/[0.06];
+  }
+
+  /* Muted label */
+  .apple-label {
+    @apply text-xs text-white/40 uppercase tracking-widest font-medium;
   }
 }

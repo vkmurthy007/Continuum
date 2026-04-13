@@ -1,17 +1,26 @@
 import type { CascadeResult, InterventionRecommendation, Patient } from './types';
 
 const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
-const API_URL = 'https://api.anthropic.com/v1/messages';
 
-// API key must be set in localStorage under 'continuum_api_key'
-function getApiKey(): string {
-  return localStorage.getItem('continuum_api_key') || '';
+// Always use the server-side proxy — key never touches the browser
+const API_URL = '/api/claude';
+
+async function callClaude(body: object): Promise<{ content: Array<{ text: string }> }> {
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`API error: ${err}`);
+  }
+
+  return response.json();
 }
 
 export async function simulateCascade(patient: Patient): Promise<CascadeResult> {
-  const apiKey = getApiKey();
-  if (!apiKey) throw new Error('NO_API_KEY');
-
   const rideHistorySummary = patient.ride_history
     .slice(-5)
     .map(r => `${r.date}: ${r.outcome} (lead time: ${r.lead_time_hours}h)`)
@@ -42,40 +51,19 @@ Respond ONLY with valid JSON in this exact format:
   "clinical_basis": "One sentence explaining the clinical reasoning."
 }`;
 
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
-      model: CLAUDE_MODEL,
-      max_tokens: 800,
-      messages: [{ role: 'user', content: prompt }],
-    }),
+  const data = await callClaude({
+    model: CLAUDE_MODEL,
+    max_tokens: 800,
+    messages: [{ role: 'user', content: prompt }],
   });
 
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`API error: ${err}`);
-  }
-
-  const data = await response.json();
   const text = data.content[0].text;
-
-  // Extract JSON from response
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) throw new Error('Could not parse cascade response');
-
   return JSON.parse(jsonMatch[0]) as CascadeResult;
 }
 
 export async function getInterventionRecommendation(patient: Patient): Promise<InterventionRecommendation> {
-  const apiKey = getApiKey();
-  if (!apiKey) throw new Error('NO_API_KEY');
-
   const prompt = `You are CONTINUUM's intervention recommendation engine. A care coordinator is reviewing a high-risk patient.
 
 Patient profile:
@@ -99,27 +87,14 @@ Respond ONLY with valid JSON:
   ]
 }`;
 
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
-      model: CLAUDE_MODEL,
-      max_tokens: 600,
-      messages: [{ role: 'user', content: prompt }],
-    }),
+  const data = await callClaude({
+    model: CLAUDE_MODEL,
+    max_tokens: 600,
+    messages: [{ role: 'user', content: prompt }],
   });
 
-  if (!response.ok) throw new Error('API error');
-
-  const data = await response.json();
   const text = data.content[0].text;
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) throw new Error('Could not parse intervention response');
-
   return JSON.parse(jsonMatch[0]) as InterventionRecommendation;
 }

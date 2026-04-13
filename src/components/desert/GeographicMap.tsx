@@ -15,8 +15,8 @@ const typeColor: Record<string, string> = {
 export default function GeographicMap({ insights }: Props) {
   return (
     <div className="h-full relative">
-      <div className="absolute top-4 left-4 z-[1000] bg-gray-900/90 border border-gray-700 rounded-lg px-3 py-2">
-        <div className="text-xs font-semibold text-white mb-1.5">Care Desert Intelligence</div>
+      <div className="absolute top-4 left-4 z-[1000] bg-black/80 border border-white/[0.08] rounded-2xl px-3 py-2 backdrop-blur-sm">
+        <div className="text-xs font-medium text-white mb-1.5">Care Desert Intelligence</div>
         <div className="space-y-1">
           {[
             { label: 'Care Desert Alert', color: '#ef4444' },
@@ -25,7 +25,7 @@ export default function GeographicMap({ insights }: Props) {
           ].map(item => (
             <div key={item.label} className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full" style={{ background: item.color }} />
-              <span className="text-xs text-gray-400">{item.label}</span>
+              <span className="text-xs text-white/60">{item.label}</span>
             </div>
           ))}
         </div>
@@ -52,9 +52,9 @@ export default function GeographicMap({ insights }: Props) {
             opacity={0.8}
           >
             <Popup>
-              <div style={{ background: '#111827', color: '#f9fafb', padding: 8, minWidth: 200, fontSize: 12 }}>
-                <div style={{ fontWeight: 700, marginBottom: 4 }}>{insight.title}</div>
-                <div style={{ color: '#9ca3af', marginBottom: 4 }}>{insight.geography_label}</div>
+              <div style={{ background: '#111111', color: '#ffffff', padding: 8, minWidth: 200, fontSize: 12, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12 }}>
+                <div style={{ fontWeight: 600, marginBottom: 4 }}>{insight.title}</div>
+                <div style={{ color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>{insight.geography_label}</div>
                 <div>Patients affected: <strong>{insight.affected_patient_count.toLocaleString()}</strong></div>
                 <div>Completion: <strong style={{ color: '#ef4444' }}>{Math.round(insight.completion_rate * 100)}%</strong> vs {Math.round(insight.platform_benchmark * 100)}% benchmark</div>
               </div>
