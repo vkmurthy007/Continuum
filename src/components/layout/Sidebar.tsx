@@ -13,7 +13,7 @@ const navItems: { id: View; label: string; sub: string; icon: React.ReactNode }[
   { id: 'passport', label: 'Health Passport', sub: 'SDOH data product', icon: <Database size={18} /> },
 ];
 
-export default function Sidebar({ currentView, onNavigate, onApiKey }: Props) {
+export default function Sidebar({ currentView, onNavigate }: Props) {
   return (
     <aside className="w-56 bg-[#1a1a1a] border-r border-white/[0.06] flex flex-col">
       <div className="px-5 py-5 border-b border-white/[0.06]">
