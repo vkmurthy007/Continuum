@@ -1,0 +1,358 @@
+{
+  "f001": [
+    {
+      "account_id": "ACC001-A",
+      "facility_id": "f001",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-10T09:14:00Z",
+      "rides_booked_30d": 22,
+      "outcomes_submitted_30d": 14,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC001-B",
+      "facility_id": "f001",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-02-15T11:30:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC001-C",
+      "facility_id": "f001",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC001-D",
+      "facility_id": "f001",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": "2026-04-08T14:20:00Z",
+      "rides_booked_30d": 18,
+      "outcomes_submitted_30d": 9,
+      "is_active": true
+    }
+  ],
+  "f002": [
+    {
+      "account_id": "ACC002-A",
+      "facility_id": "f002",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-12T08:45:00Z",
+      "rides_booked_30d": 19,
+      "outcomes_submitted_30d": 12,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC002-B",
+      "facility_id": "f002",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-04-11T10:00:00Z",
+      "rides_booked_30d": 15,
+      "outcomes_submitted_30d": 6,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC002-C",
+      "facility_id": "f002",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-03-20T16:00:00Z",
+      "rides_booked_30d": 3,
+      "outcomes_submitted_30d": 1,
+      "is_active": false
+    }
+  ],
+  "f003": [
+    {
+      "account_id": "ACC003-A",
+      "facility_id": "f003",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-13T07:30:00Z",
+      "rides_booked_30d": 27,
+      "outcomes_submitted_30d": 25,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC003-B",
+      "facility_id": "f003",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-04-12T09:15:00Z",
+      "rides_booked_30d": 21,
+      "outcomes_submitted_30d": 19,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC003-C",
+      "facility_id": "f003",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-04-11T11:00:00Z",
+      "rides_booked_30d": 14,
+      "outcomes_submitted_30d": 13,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC003-D",
+      "facility_id": "f003",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": "2026-04-10T14:00:00Z",
+      "rides_booked_30d": 10,
+      "outcomes_submitted_30d": 9,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC003-E",
+      "facility_id": "f003",
+      "name": "Coordinator E",
+      "role": "coordinator",
+      "last_login_at": "2026-04-09T15:30:00Z",
+      "rides_booked_30d": 8,
+      "outcomes_submitted_30d": 7,
+      "is_active": true
+    }
+  ],
+  "f004": [
+    {
+      "account_id": "ACC004-A",
+      "facility_id": "f004",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC004-B",
+      "facility_id": "f004",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC004-C",
+      "facility_id": "f004",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-01-10T09:00:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC004-D",
+      "facility_id": "f004",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC004-E",
+      "facility_id": "f004",
+      "name": "Coordinator E",
+      "role": "coordinator",
+      "last_login_at": "2026-03-02T10:00:00Z",
+      "rides_booked_30d": 4,
+      "outcomes_submitted_30d": 1,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC004-F",
+      "facility_id": "f004",
+      "name": "Coordinator F",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    }
+  ],
+  "f005": [
+    {
+      "account_id": "ACC005-A",
+      "facility_id": "f005",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-09T10:30:00Z",
+      "rides_booked_30d": 16,
+      "outcomes_submitted_30d": 10,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC005-B",
+      "facility_id": "f005",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-04-07T14:00:00Z",
+      "rides_booked_30d": 11,
+      "outcomes_submitted_30d": 7,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC005-C",
+      "facility_id": "f005",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-02-28T09:00:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    }
+  ],
+  "f006": [
+    {
+      "account_id": "ACC006-A",
+      "facility_id": "f006",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-11T08:00:00Z",
+      "rides_booked_30d": 28,
+      "outcomes_submitted_30d": 11,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC006-B",
+      "facility_id": "f006",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-03-15T12:00:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC006-C",
+      "facility_id": "f006",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-04-08T09:30:00Z",
+      "rides_booked_30d": 21,
+      "outcomes_submitted_30d": 8,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC006-D",
+      "facility_id": "f006",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    }
+  ],
+  "f007": [
+    {
+      "account_id": "ACC007-A",
+      "facility_id": "f007",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-04-13T08:00:00Z",
+      "rides_booked_30d": 35,
+      "outcomes_submitted_30d": 28,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC007-B",
+      "facility_id": "f007",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": "2026-04-12T10:45:00Z",
+      "rides_booked_30d": 24,
+      "outcomes_submitted_30d": 20,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC007-C",
+      "facility_id": "f007",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-04-10T13:00:00Z",
+      "rides_booked_30d": 12,
+      "outcomes_submitted_30d": 9,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC007-D",
+      "facility_id": "f007",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": "2026-04-09T16:00:00Z",
+      "rides_booked_30d": 10,
+      "outcomes_submitted_30d": 7,
+      "is_active": true
+    }
+  ],
+  "f008": [
+    {
+      "account_id": "ACC008-A",
+      "facility_id": "f008",
+      "name": "Coordinator A",
+      "role": "coordinator",
+      "last_login_at": "2026-02-10T09:00:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC008-B",
+      "facility_id": "f008",
+      "name": "Coordinator B",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC008-C",
+      "facility_id": "f008",
+      "name": "Coordinator C",
+      "role": "coordinator",
+      "last_login_at": "2026-04-05T11:00:00Z",
+      "rides_booked_30d": 8,
+      "outcomes_submitted_30d": 2,
+      "is_active": true
+    },
+    {
+      "account_id": "ACC008-D",
+      "facility_id": "f008",
+      "name": "Coordinator D",
+      "role": "coordinator",
+      "last_login_at": null,
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    },
+    {
+      "account_id": "ACC008-E",
+      "facility_id": "f008",
+      "name": "Coordinator E",
+      "role": "coordinator",
+      "last_login_at": "2026-01-28T14:00:00Z",
+      "rides_booked_30d": 0,
+      "outcomes_submitted_30d": 0,
+      "is_active": false
+    }
+  ]
+}

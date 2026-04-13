@@ -1,0 +1,50 @@
+[
+  {
+    "signal_id": "sig_001",
+    "patient_id": "anon_a1f2c3",
+    "signal_type": "LEAD_TIME_COLLAPSE",
+    "severity": "critical",
+    "detected_at": "2026-04-11T06:00:00",
+    "confidence": 0.91,
+    "feature_attribution": [
+      {"feature": "Lead time trend (14d)", "weight": 0.42},
+      {"feature": "Prior miss sequence", "weight": 0.31},
+      {"feature": "Caregiver response rate", "weight": 0.18}
+    ],
+    "recommended_sdoh_code": "Z59.4",
+    "routed_to": ["coordinator", "care_team"],
+    "resolved": false
+  },
+  {
+    "signal_id": "sig_002",
+    "patient_id": "anon_b4d5e6",
+    "signal_type": "CAREGIVER_DISCONNECT",
+    "severity": "high",
+    "detected_at": "2026-04-10T08:00:00",
+    "confidence": 0.78,
+    "feature_attribution": [
+      {"feature": "Caregiver confirmation drop", "weight": 0.55},
+      {"feature": "Consecutive misses", "weight": 0.28},
+      {"feature": "Appointment acuity", "weight": 0.17}
+    ],
+    "recommended_sdoh_code": "Z74.2",
+    "routed_to": ["coordinator"],
+    "resolved": false
+  },
+  {
+    "signal_id": "sig_003",
+    "patient_id": "anon_e3j4k5",
+    "signal_type": "BUDGET_PROXIMITY_ANXIETY",
+    "severity": "high",
+    "detected_at": "2026-04-11T09:00:00",
+    "confidence": 0.85,
+    "feature_attribution": [
+      {"feature": "Budget remaining ($45)", "weight": 0.61},
+      {"feature": "Late cancellation spike", "weight": 0.24},
+      {"feature": "Appointment frequency", "weight": 0.15}
+    ],
+    "recommended_sdoh_code": "Z59.7",
+    "routed_to": ["coordinator", "payer"],
+    "resolved": false
+  }
+]

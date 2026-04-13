@@ -1,0 +1,114 @@
+[
+  {
+    "intervention_id": "INT001",
+    "rule_id": "R1",
+    "type": "ehr_integration",
+    "title": "EHR Scheduling Integration",
+    "description": "This facility is booking rides reactively — at time of appointment confirmation rather than during initial scheduling. Short lead times significantly reduce driver match reliability and increase cancellation risk.",
+    "action_steps": [
+      "Schedule a workflow review call with their Care Coordination Director",
+      "Demo the EHR-integrated booking flow (Epic / Cerner connectors)",
+      "Propose a 30-day pilot with lead time SLA tracking",
+      "Escalate to Technical Partnerships if EHR integration is not yet live"
+    ],
+    "escalation_path": "Flag for EHR Integration team",
+    "trigger_metric": "blt",
+    "severity": "high"
+  },
+  {
+    "intervention_id": "INT002",
+    "rule_id": "R2",
+    "type": "staff_training",
+    "title": "Staff Activation Training",
+    "description": "Multiple coordinators are provisioned but inactive. Platform was deployed but not adopted — a common hidden failure mode that inflates no-show risk and reduces booking quality.",
+    "action_steps": [
+      "Identify inactive coordinator accounts by name with facility admin",
+      "Schedule a 60-minute platform refresher training session",
+      "Set 30-day activation goal with facility manager",
+      "Follow up with ride volume data to confirm adoption"
+    ],
+    "escalation_path": "Flag for Customer Success onboarding team",
+    "trigger_metric": "sar",
+    "severity": "high"
+  },
+  {
+    "intervention_id": "INT003",
+    "rule_id": "R3",
+    "type": "outcome_reporting",
+    "title": "Outcome Reporting Workflow Review",
+    "description": "This facility has stopped submitting ride outcome reports. Without outcome data, Uber Health cannot improve driver matching models or demonstrate ROI to payers.",
+    "action_steps": [
+      "Review onboarding documentation — confirm they know how to submit reports",
+      "Check if coordinator turnover may have broken the workflow",
+      "Re-demo the outcome reporting flow in the platform",
+      "Set 2-week target: 100% outcome reporting on all completed rides"
+    ],
+    "escalation_path": "Flag for Product team (outcome reporting UX)",
+    "trigger_metric": "flq",
+    "severity": "medium"
+  },
+  {
+    "intervention_id": "INT004",
+    "rule_id": "R4",
+    "type": "escalation",
+    "title": "Platform Dispute & Driver Matching Investigation",
+    "description": "An unusually high share of no-shows are being attributed to driver/platform failures. This may indicate data quality issues, dispute habits, or a genuine matching problem in this market.",
+    "action_steps": [
+      "Pull raw no-show reason codes for this facility (last 60 days)",
+      "Interview coordinator about dispute submission patterns",
+      "Check driver supply metrics in this facility's geographic area",
+      "Escalate to Operations if driver-attributed rate exceeds 40%"
+    ],
+    "escalation_path": "Escalate to Operations team",
+    "trigger_metric": "rcr",
+    "severity": "critical"
+  },
+  {
+    "intervention_id": "INT005",
+    "rule_id": "R5",
+    "type": "outcome_reporting",
+    "title": "No-Show Reason Code Audit",
+    "description": "High ride volume but poor no-show attribution balance suggests coordinators may be selecting incorrect reason codes — or driver-attributed codes are masking scheduling problems.",
+    "action_steps": [
+      "Export last 30 days of no-show records with reason codes",
+      "Review with coordinator — are codes being selected correctly?",
+      "Provide reason code guide if needed",
+      "Monitor NSAB score over next 30-day cycle"
+    ],
+    "escalation_path": "Flag for Account Manager review",
+    "trigger_metric": "nsab",
+    "severity": "medium"
+  },
+  {
+    "intervention_id": "INT006",
+    "rule_id": "R6",
+    "type": "escalation",
+    "title": "Full Account Health Review",
+    "description": "All performance metrics are critically low on a mature account. This pattern indicates a systematic integration failure that requires cross-functional intervention beyond standard account management.",
+    "action_steps": [
+      "Initiate Customer Success escalation within 48 hours",
+      "Schedule executive-level review with facility leadership",
+      "Audit all provisioned accounts and ride history",
+      "Consider temporary pause of expansion discussions until baseline is restored"
+    ],
+    "escalation_path": "Escalate to Customer Success — priority review",
+    "trigger_metric": "all",
+    "severity": "critical"
+  },
+  {
+    "intervention_id": "INT007",
+    "rule_id": "R7",
+    "type": "escalation",
+    "title": "Proactive Outreach: Acute Score Decline",
+    "description": "This facility's PRS has dropped significantly in a single period. Acute drops often signal a specific triggering event — staff turnover, system change, or a bad patient incident — that can be addressed before it becomes chronic.",
+    "action_steps": [
+      "Contact facility within 48 hours",
+      "Ask directly: did anything change in the past 30 days? (staffing, EHR, procedures)",
+      "Review sub-metric breakdown to identify the primary driver of decline",
+      "Set a 30-day recovery plan with specific targets"
+    ],
+    "escalation_path": "Flag for Account Manager urgent review",
+    "trigger_metric": "all",
+    "severity": "critical"
+  }
+]

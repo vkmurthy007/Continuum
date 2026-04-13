@@ -1,0 +1,35 @@
+[
+  {
+    "log_id": "int_001",
+    "patient_id": "anon_a1f2c3",
+    "patient_initials": "M.R.",
+    "intervention_type": "coordinator_call",
+    "executed_at": "2026-04-08T14:00:00",
+    "predicted_lift": 0.18,
+    "actual_outcome": "completed",
+    "lift_realized": 0.22,
+    "status": "resolved"
+  },
+  {
+    "log_id": "int_002",
+    "patient_id": "anon_b4d5e6",
+    "patient_initials": "T.K.",
+    "intervention_type": "caregiver_notify",
+    "executed_at": "2026-04-09T10:30:00",
+    "predicted_lift": 0.15,
+    "actual_outcome": "no_show_patient",
+    "lift_realized": 0,
+    "status": "escalated"
+  },
+  {
+    "log_id": "int_003",
+    "patient_id": "anon_e3j4k5",
+    "patient_initials": "R.W.",
+    "intervention_type": "reschedule_offer",
+    "executed_at": "2026-04-10T09:00:00",
+    "predicted_lift": 0.12,
+    "actual_outcome": "completed",
+    "lift_realized": 0.14,
+    "status": "resolved"
+  }
+]

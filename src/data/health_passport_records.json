@@ -1,0 +1,58 @@
+[
+  {
+    "record_id": "hp_001",
+    "patient_id": "anon_8a2f91",
+    "condition": "ESRD",
+    "signal_type": "transportation_adherence_decline",
+    "severity": "high",
+    "completion_rate_current": 0.61,
+    "completion_rate_prior": 0.89,
+    "predicted_readmission_risk_30d": 0.38,
+    "predicted_readmission_risk_90d": 0.52,
+    "recommended_sdoh_code": "Z59.4",
+    "confidence": 0.84,
+    "export_destinations": ["epic", "payer_platform"]
+  },
+  {
+    "record_id": "hp_002",
+    "patient_id": "anon_3b7c12",
+    "condition": "Oncology",
+    "signal_type": "caregiver_disconnect",
+    "severity": "high",
+    "completion_rate_current": 0.54,
+    "completion_rate_prior": 0.88,
+    "predicted_readmission_risk_30d": 0.29,
+    "predicted_readmission_risk_90d": 0.41,
+    "recommended_sdoh_code": "Z74.2",
+    "confidence": 0.79,
+    "export_destinations": ["cerner"]
+  },
+  {
+    "record_id": "hp_003",
+    "patient_id": "anon_5d9e34",
+    "condition": "Post-Discharge",
+    "signal_type": "adherence_decline",
+    "severity": "medium",
+    "completion_rate_current": 0.71,
+    "completion_rate_prior": 0.85,
+    "predicted_readmission_risk_30d": 0.18,
+    "predicted_readmission_risk_90d": 0.24,
+    "recommended_sdoh_code": "Z59.1",
+    "confidence": 0.71,
+    "export_destinations": ["aco_dashboard"]
+  },
+  {
+    "record_id": "hp_004",
+    "patient_id": "anon_2f1a56",
+    "condition": "I/DD",
+    "signal_type": "budget_proximity_anxiety",
+    "severity": "high",
+    "completion_rate_current": 0.48,
+    "completion_rate_prior": 0.92,
+    "predicted_readmission_risk_30d": 0.22,
+    "predicted_readmission_risk_90d": 0.31,
+    "recommended_sdoh_code": "Z59.7",
+    "confidence": 0.88,
+    "export_destinations": ["payer_platform", "aco_dashboard"]
+  }
+]

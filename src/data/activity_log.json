@@ -1,0 +1,134 @@
+[
+  {
+    "activity_id": "ACT001",
+    "facility_id": "f001",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-03-09",
+    "contact_name": "Marcus Webb",
+    "interaction_type": "call",
+    "notes": "Spoke with care coordinator lead about declining BLT scores. They confirmed rides are being booked same-day due to their EHR not sending alerts early enough. Agreed to schedule a workflow review with their IT team to explore Epic connector.",
+    "outcome": "pending"
+  },
+  {
+    "activity_id": "ACT002",
+    "facility_id": "f001",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-02-18",
+    "contact_name": "Marcus Webb",
+    "interaction_type": "email",
+    "notes": "Sent follow-up on BLT decline trend. Included benchmark data showing peer facilities booking 72% of rides 4+ hours in advance. No response received yet — will escalate to phone call next cycle.",
+    "outcome": null
+  },
+  {
+    "activity_id": "ACT003",
+    "facility_id": "f006",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-03-23",
+    "contact_name": "Priya Nair",
+    "interaction_type": "call",
+    "notes": "Quarterly check-in with Fresno facility director. BLT continues to be the primary drag — confirmed they do not have EHR integration live. Discussed pilot timeline. Priya expressed interest but noted budget approval needed for IT project.",
+    "outcome": "pending"
+  },
+  {
+    "activity_id": "ACT004",
+    "facility_id": "f006",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-02-14",
+    "contact_name": "Priya Nair",
+    "interaction_type": "onsite",
+    "notes": "On-site visit to review platform adoption. Observed that 2 of 4 coordinator accounts have not been used in 30+ days. Ran a quick refresher demo on the booking flow and outcome reporting. Staff seemed engaged — will monitor login activity over next 2 weeks.",
+    "outcome": "resolved"
+  },
+  {
+    "activity_id": "ACT005",
+    "facility_id": "f002",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-04-06",
+    "contact_name": "Dr. Elena Torres",
+    "interaction_type": "call",
+    "notes": "Monthly sync with St. Cecilia's medical director. Score stable at 72. Discussed FLQ drag — team is completing rides but not consistently filing outcome reports within 72-hour window. Dr. Torres will remind staff in next team huddle.",
+    "outcome": "pending"
+  },
+  {
+    "activity_id": "ACT006",
+    "facility_id": "f002",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-03-12",
+    "contact_name": "Jasmine Park",
+    "interaction_type": "platform_message",
+    "notes": "Sent in-platform message to coordinator team about outcome reporting compliance. Included step-by-step guide PDF and noted the 72-hour submission window. One coordinator (Coordinator A) responded positively and submitted 4 outstanding reports same day.",
+    "outcome": "resolved"
+  },
+  {
+    "activity_id": "ACT007",
+    "facility_id": "f005",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-03-30",
+    "contact_name": "David Kim",
+    "interaction_type": "call",
+    "notes": "Discussed NSAB anomaly — a high proportion of no-shows at Hillside are being attributed to driver/platform issues. David confirmed coordinators may be selecting default codes rather than correct patient reason codes. Agreed to send reason code audit guide.",
+    "outcome": "pending"
+  },
+  {
+    "activity_id": "ACT008",
+    "facility_id": "f005",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-02-26",
+    "contact_name": "David Kim",
+    "interaction_type": "email",
+    "notes": "Sent 30-day performance summary. Score at 58, stable. Highlighted NSAB as primary drag and recommended coordinator training on no-show documentation. David acknowledged and said he would share with team.",
+    "outcome": null
+  },
+  {
+    "activity_id": "ACT009",
+    "facility_id": "f007",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-04-08",
+    "contact_name": "Sandra Liu",
+    "interaction_type": "call",
+    "notes": "Quarterly business review with Pacific Cancer Center. PRS trending up to 82 — team celebrated the improvement. Discussed upsell opportunity: expanding coordinator provisioning from 4 to 6 accounts to handle growing patient volume. Sandra agreed to discuss with hospital admin.",
+    "outcome": "resolved"
+  },
+  {
+    "activity_id": "ACT010",
+    "facility_id": "f007",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-03-15",
+    "contact_name": "Sandra Liu",
+    "interaction_type": "email",
+    "notes": "Sent congratulatory note on 3-point PRS improvement and shared benchmark comparison showing Pacific Cancer Center now outperforming 78% of oncology accounts nationally. Suggested scheduling a case study interview for the Uber Health partner spotlight.",
+    "outcome": "resolved"
+  },
+  {
+    "activity_id": "ACT011",
+    "facility_id": "f003",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-04-10",
+    "contact_name": "Rachel Torres",
+    "interaction_type": "call",
+    "notes": "Check-in with Bay Area PT Group. Scores excellent across all metrics. Discussed expanding to their new satellite location in Marin County. Rachel expressed strong interest — escalating to New Business team to open account setup.",
+    "outcome": "escalated"
+  },
+  {
+    "activity_id": "ACT012",
+    "facility_id": "f008",
+    "account_manager_id": "AM001",
+    "account_manager_name": "Sarah Chen",
+    "activity_date": "2026-02-27",
+    "contact_name": "Tom Bradley",
+    "interaction_type": "call",
+    "notes": "Urgent check-in triggered by -16 score decline. Tom (facility director) confirmed a major staff turnover event in January — 3 of 5 coordinators left. Replacement staff have not been trained on Uber Health platform. Scheduled onboarding session for March 10.",
+    "outcome": "pending"
+  }
+]
