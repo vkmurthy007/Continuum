@@ -75,15 +75,29 @@ Patient profile:
 - Budget remaining: $${patient.budget_remaining}
 - Next appointment: ${patient.next_appointment_label} (${patient.appointment_type})
 
-Explain in 2-3 plain English sentences why this patient is at risk. Then provide 3 ranked intervention recommendations.
+Explain in 2-3 plain English sentences why this patient is at risk based on their transportation behavior signals.
+
+Then provide exactly 3 ranked interventions. IMPORTANT: every intervention must be something Uber Health can actually do — actions must come exclusively from this list of Uber Health capabilities:
+- Schedule or pre-book a ride for the patient's upcoming appointment
+- Send an SMS/push reminder nudge with a one-tap ride booking link
+- Upgrade the patient to a scheduled ride (instead of on-demand) to reduce lead-time uncertainty
+- Apply a fare waiver or zero-cost ride voucher for the next appointment
+- Enable recurring ride scheduling for all future appointments of this type
+- Send a caregiver/escort coordination request (second seat on ride)
+- Trigger a trip status notification to the care team when patient boards/arrives
+- Flag patient for high-frequency ride monitoring (alert if no ride booked 48h before appointment)
+- Enroll patient in Uber Health's proactive outreach program (automated pre-appointment check-ins via SMS)
+- Switch patient from self-booking to coordinator-managed booking to eliminate booking friction
+
+Do NOT suggest phone calls, social worker referrals, clinical interventions, or anything outside Uber Health's transportation and behavioral nudge toolkit.
 
 Respond ONLY with valid JSON:
 {
-  "explanation": "2-3 sentence plain English explanation of why this patient is at risk and what pattern you're detecting.",
+  "explanation": "2-3 sentence plain English explanation of why this patient is at risk based on their transportation behavior patterns.",
   "interventions": [
-    {"action": "Specific action to take", "predicted_lift": 0.18, "urgency": "immediate"},
-    {"action": "Second action", "predicted_lift": 0.12, "urgency": "within_24h"},
-    {"action": "Third action", "predicted_lift": 0.09, "urgency": "this_week"}
+    {"action": "Specific Uber Health action", "predicted_lift": 0.18, "urgency": "immediate"},
+    {"action": "Second Uber Health action", "predicted_lift": 0.12, "urgency": "within_24h"},
+    {"action": "Third Uber Health action", "predicted_lift": 0.09, "urgency": "this_week"}
   ]
 }`;
 

@@ -56,7 +56,7 @@ export default function InterventionConsole({ patient }: { patient: Patient }) {
       <div className="flex items-start justify-between mb-3">
         <div>
           <div className="text-sm font-medium text-white">Intervention Console</div>
-          <div className="text-xs text-white/40 mt-0.5">Claude AI · Ranked interventions for {patient.initials}</div>
+          <div className="text-xs text-white/40 mt-0.5">Claude AI · Uber Health transport & nudge actions for {patient.initials}</div>
         </div>
         <Zap size={16} className="text-emerald-400 mt-0.5" />
       </div>
@@ -90,7 +90,7 @@ export default function InterventionConsole({ patient }: { patient: Patient }) {
             <ShieldAlert size={13} className="text-amber-400 mt-0.5 flex-shrink-0" />
             <p className="text-xs text-amber-400/70 leading-relaxed">
               <strong className="text-amber-400">AI-generated recommendations — advisory only.</strong>{' '}
-              A human coordinator must confirm every action before it is logged. These suggestions do not constitute clinical instructions.
+              Actions are limited to Uber Health's transportation and behavioral nudge toolkit. A human coordinator must confirm every action. These suggestions do not constitute clinical instructions.
             </p>
           </div>
 
