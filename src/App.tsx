@@ -6,6 +6,7 @@ import CareDesertView from './views/CareDesertView';
 import HealthPassportView from './views/HealthPassportView';
 import ApiKeyModal from './components/layout/ApiKeyModal';
 import ComplianceModal from './components/layout/ComplianceModal';
+import IntroScreen from './components/layout/IntroScreen';
 import DemoBanner from './components/layout/DemoBanner';
 import AuditTrail from './components/layout/AuditTrail';
 import { ClipboardList } from 'lucide-react';
@@ -13,10 +14,18 @@ import { ClipboardList } from 'lucide-react';
 export default function App() {
   const [view, setView] = useState<View>('journey');
   const [showApiModal, setShowApiModal] = useState(false);
+  const [introSeen, setIntroSeen] = useState(
+    () => sessionStorage.getItem('intro_seen') === 'true'
+  );
   const [complianceAccepted, setComplianceAccepted] = useState(
     () => sessionStorage.getItem('compliance_accepted') === 'true'
   );
   const [showAudit, setShowAudit] = useState(false);
+
+  const handleIntroContinue = () => {
+    sessionStorage.setItem('intro_seen', 'true');
+    setIntroSeen(true);
+  };
 
   const handleAccept = () => {
     sessionStorage.setItem('compliance_accepted', 'true');
@@ -25,8 +34,11 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen bg-black text-white overflow-hidden">
-      {/* Compliance gate */}
-      {!complianceAccepted && <ComplianceModal onAccept={handleAccept} />}
+      {/* Intro gate — shown first, once per session */}
+      {!introSeen && <IntroScreen onContinue={handleIntroContinue} />}
+
+      {/* Compliance gate — shown after intro */}
+      {introSeen && !complianceAccepted && <ComplianceModal onAccept={handleAccept} />}
 
       {/* Top demo banner */}
       <DemoBanner />
