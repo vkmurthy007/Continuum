@@ -67,6 +67,13 @@ export default function IntroScreen({ onContinue }: Props) {
           <p className="text-white/50 text-base leading-relaxed max-w-xl">
             CONTINUUM turns Uber Health's ride-booking behavioral data into predictive risk intelligence — surfacing care continuity failures before they happen, and delivering interventions within Uber Health's own toolkit.
           </p>
+          <button
+            onClick={onContinue}
+            className="mt-7 bg-white hover:bg-white/90 text-black text-sm font-semibold px-6 py-3 rounded-2xl transition-colors flex items-center gap-2"
+          >
+            View Demo
+            <ArrowRight size={15} />
+          </button>
         </div>
 
         {/* The insight */}
