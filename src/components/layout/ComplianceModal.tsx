@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Shield, AlertTriangle, Eye, CheckCircle } from 'lucide-react';
 
 interface Props {
@@ -29,8 +28,6 @@ const layers = [
 ];
 
 export default function ComplianceModal({ onAccept }: Props) {
-  const [checked, setChecked] = useState(false);
-
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
       <div className="bg-[#111111] border border-white/[0.08] rounded-2xl w-full max-w-lg">
@@ -58,28 +55,11 @@ export default function ComplianceModal({ onAccept }: Props) {
           ))}
         </div>
 
-        {/* Checkbox + CTA */}
+        {/* CTA */}
         <div className="px-6 pb-6 pt-2 border-t border-white/[0.08]">
-          <label className="flex items-start gap-3 cursor-pointer mb-4">
-            <input
-              type="checkbox"
-              checked={checked}
-              onChange={e => setChecked(e.target.checked)}
-              className="mt-0.5 accent-white w-4 h-4 flex-shrink-0"
-            />
-            <span className="text-xs text-white/60">
-              I understand this is a demo using fictional data. AI outputs are advisory only and
-              I will not use them to make real clinical or operational decisions.
-            </span>
-          </label>
           <button
             onClick={onAccept}
-            disabled={!checked}
-            className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2 ${
-              checked
-                ? 'bg-white hover:bg-white/90 text-black'
-                : 'bg-white/[0.06] text-white/25 cursor-not-allowed'
-            }`}
+            className="w-full py-2.5 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-black"
           >
             <CheckCircle size={15} />
             Enter Demo
