@@ -7,28 +7,33 @@ import HealthPassportView from './views/HealthPassportView';
 import ApiKeyModal from './components/layout/ApiKeyModal';
 import ComplianceModal from './components/layout/ComplianceModal';
 import IntroScreen from './components/layout/IntroScreen';
+import InAppBrowserGate from './components/layout/InAppBrowserGate';
 import DemoBanner from './components/layout/DemoBanner';
 import AuditTrail from './components/layout/AuditTrail';
 import { ClipboardList, Activity, Map, Database } from 'lucide-react';
+import { isInAppBrowser, safeSession } from './lib/browserUtils';
 
 export default function App() {
   const [view, setView] = useState<View>('journey');
   const [showApiModal, setShowApiModal] = useState(false);
   const [introSeen, setIntroSeen] = useState(
-    () => sessionStorage.getItem('intro_seen') === 'true'
+    () => safeSession.get('intro_seen') === 'true'
   );
   const [complianceAccepted, setComplianceAccepted] = useState(
-    () => sessionStorage.getItem('compliance_accepted') === 'true'
+    () => safeSession.get('compliance_accepted') === 'true'
   );
   const [showAudit, setShowAudit] = useState(false);
 
+  // Block in-app browsers before anything else
+  if (isInAppBrowser()) return <InAppBrowserGate />;
+
   const handleIntroContinue = () => {
-    sessionStorage.setItem('intro_seen', 'true');
+    safeSession.set('intro_seen', 'true');
     setIntroSeen(true);
   };
 
   const handleAccept = () => {
-    sessionStorage.setItem('compliance_accepted', 'true');
+    safeSession.set('compliance_accepted', 'true');
     setComplianceAccepted(true);
   };
 
