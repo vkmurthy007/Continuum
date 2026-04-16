@@ -29,9 +29,9 @@ const layers = [
 
 export default function ComplianceModal({ onAccept }: Props) {
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
+    <div className="bg-black flex flex-col" style={{ minHeight: '100dvh' }}>
       {/* Flex-col so the button is always visible — content scrolls, button stays pinned */}
-      <div className="bg-[#111111] border border-white/[0.08] rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg flex flex-col" style={{ maxHeight: '90dvh' }}>
+      <div className="bg-[#111111] w-full sm:max-w-lg sm:mx-auto sm:my-auto sm:rounded-2xl flex flex-col flex-1 sm:flex-none sm:border sm:border-white/[0.08]" style={{ minHeight: '100dvh', maxHeight: '100dvh' }}>
         {/* Scrollable content */}
         <div className="overflow-y-auto flex-1">
           {/* Header */}

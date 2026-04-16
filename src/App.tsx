@@ -7,11 +7,10 @@ import HealthPassportView from './views/HealthPassportView';
 import ApiKeyModal from './components/layout/ApiKeyModal';
 import ComplianceModal from './components/layout/ComplianceModal';
 import IntroScreen from './components/layout/IntroScreen';
-import InAppBrowserGate from './components/layout/InAppBrowserGate';
 import DemoBanner from './components/layout/DemoBanner';
 import AuditTrail from './components/layout/AuditTrail';
 import { ClipboardList, Activity, Map, Database } from 'lucide-react';
-import { isInAppBrowser, safeSession } from './lib/browserUtils';
+import { safeSession } from './lib/browserUtils';
 
 export default function App() {
   const [view, setView] = useState<View>('journey');
@@ -23,9 +22,6 @@ export default function App() {
     () => safeSession.get('compliance_accepted') === 'true'
   );
   const [showAudit, setShowAudit] = useState(false);
-
-  // Block in-app browsers before anything else
-  if (isInAppBrowser()) return <InAppBrowserGate />;
 
   const handleIntroContinue = () => {
     safeSession.set('intro_seen', 'true');
@@ -43,14 +39,12 @@ export default function App() {
     { id: 'passport' as View, label: 'Passport', icon: <Database size={20} /> },
   ];
 
+  // Render gates as full pages — no fixed overlays, works in all in-app browsers
+  if (!introSeen) return <IntroScreen onContinue={handleIntroContinue} />;
+  if (!complianceAccepted) return <ComplianceModal onAccept={handleAccept} />;
+
   return (
-    <div className="flex flex-col h-screen bg-black text-white overflow-hidden">
-      {/* Intro gate — shown first, once per session */}
-      {!introSeen && <IntroScreen onContinue={handleIntroContinue} />}
-
-      {/* Compliance gate — shown after intro */}
-      {introSeen && !complianceAccepted && <ComplianceModal onAccept={handleAccept} />}
-
+    <div className="flex flex-col bg-black text-white overflow-hidden" style={{ height: '100dvh' }}>
       {/* Top demo banner */}
       <DemoBanner />
 

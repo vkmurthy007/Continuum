@@ -43,7 +43,7 @@ const modules = [
 
 export default function IntroScreen({ onContinue }: Props) {
   return (
-    <div className="fixed inset-0 bg-black flex flex-col overflow-y-auto z-50">
+    <div className="bg-black flex flex-col overflow-y-auto" style={{ minHeight: '100dvh' }}>
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-5 border-b border-white/[0.06]">
         <div>
