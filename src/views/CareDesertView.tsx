@@ -7,7 +7,7 @@ export default function CareDesertView() {
   const insights = insightsData as CareDesertInsight[];
 
   return (
-    <div className="flex flex-col md:flex-row h-full overflow-y-auto md:overflow-hidden">
+    <div className="flex flex-col md:flex-row flex-1 overflow-y-auto">
       <div className="h-64 md:h-auto md:flex-1 flex-shrink-0">
         <GeographicMap insights={insights} />
       </div>

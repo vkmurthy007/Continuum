@@ -15,7 +15,7 @@ export default function JourneyMapView() {
   };
 
   return (
-    <div className="flex h-full">
+    <div className="flex flex-1 overflow-hidden">
       {/* Patient list — hidden on mobile when panel is open */}
       <div className={`${mobileShowPanel ? 'hidden' : 'flex'} md:flex flex-col w-full md:w-auto`}>
         <PatientList
@@ -38,7 +38,7 @@ export default function JourneyMapView() {
           </button>
           <span className="ml-auto text-sm font-medium text-white">{selected.initials}</span>
         </div>
-        <div className="flex-1 overflow-hidden">
+        <div className="flex flex-col flex-1 overflow-hidden">
           <JourneyMapPanel patient={selected} />
         </div>
       </div>

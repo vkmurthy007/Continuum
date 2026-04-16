@@ -54,7 +54,7 @@ export default function App() {
           <Sidebar currentView={view} onNavigate={setView} onApiKey={() => setShowApiModal(true)} />
         </div>
 
-        <main className="flex-1 overflow-hidden">
+        <main className="flex flex-col flex-1 overflow-hidden">
           {view === 'journey' && <JourneyMapView />}
           {view === 'desert' && <CareDesertView />}
           {view === 'passport' && <HealthPassportView />}

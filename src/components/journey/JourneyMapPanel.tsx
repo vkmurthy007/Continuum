@@ -14,7 +14,7 @@ export default function JourneyMapPanel({ patient }: Props) {
   const [activeSection, setActiveSection] = useState<'overview' | 'cascade' | 'interventions'>('overview');
 
   return (
-    <div className="flex-1 overflow-y-auto bg-black">
+    <div className="h-full overflow-y-auto bg-black">
       {/* Header */}
       <div className="px-6 py-4 border-b border-white/[0.06] flex items-center justify-between">
         <div>

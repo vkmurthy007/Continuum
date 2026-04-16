@@ -17,7 +17,7 @@ export default function HealthPassportView() {
   );
 
   return (
-    <div className="h-full flex flex-col bg-black">
+    <div className="flex flex-col flex-1 overflow-hidden bg-black">
       <div className="px-6 py-4 border-b border-white/[0.06]">
         <div className="text-lg font-semibold text-white">Health Passport API Explorer</div>
         <div className="text-xs text-white/40 mt-1">Real-time SDOH signal feed · B2B data product demonstration</div>
@@ -62,7 +62,7 @@ export default function HealthPassportView() {
         ))}
       </div>
 
-      <div className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col md:flex-row mt-0 md:mt-3">
+      <div className="flex-1 overflow-y-auto flex flex-col md:flex-row mt-0 md:mt-3">
         {/* Left: population selector — desktop only */}
         <div className="hidden md:block w-48 bg-[#111111] border-r border-white/[0.06] p-4 flex-shrink-0">
           <div className="text-xs text-white/40 uppercase tracking-wider mb-3">Population</div>
