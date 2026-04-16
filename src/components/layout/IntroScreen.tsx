@@ -56,15 +56,15 @@ export default function IntroScreen({ onContinue }: Props) {
         </div>
       </div>
 
-      <div className="flex-1 max-w-3xl mx-auto w-full px-8 py-12">
+      <div className="flex-1 max-w-3xl mx-auto w-full px-5 md:px-8 py-8 md:py-12">
 
         {/* Hero */}
-        <div className="mb-14">
+        <div className="mb-10 md:mb-14">
           <div className="text-xs font-medium text-white/25 uppercase tracking-widest mb-4">Care Intelligence Platform</div>
-          <h1 className="text-4xl font-semibold text-white leading-tight mb-5">
+          <h1 className="text-3xl md:text-4xl font-semibold text-white leading-tight mb-5">
             Transportation behavior<br />is a clinical signal.
           </h1>
-          <p className="text-white/50 text-base leading-relaxed max-w-xl">
+          <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-xl">
             CONTINUUM turns Uber Health's ride-booking behavioral data into predictive risk intelligence — surfacing care continuity failures before they happen, and delivering interventions within Uber Health's own toolkit.
           </p>
           <button
@@ -87,7 +87,7 @@ export default function IntroScreen({ onContinue }: Props) {
         {/* Modules */}
         <div className="mb-12">
           <div className="text-xs text-white/25 uppercase tracking-wider mb-4">Three modules</div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {modules.map(m => (
               <div key={m.name} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl px-4 py-4">
                 <div className="flex items-center gap-2 mb-2">
@@ -114,7 +114,7 @@ export default function IntroScreen({ onContinue }: Props) {
         </div>
 
         {/* AI & compliance callout */}
-        <div className="flex gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <div className="flex-1 bg-white/[0.03] border border-white/[0.06] rounded-2xl px-4 py-4">
             <div className="text-xs text-white/25 uppercase tracking-wider mb-2">AI moments</div>
             <div className="text-sm text-white/70 leading-relaxed">Claude powers two live AI features: <strong className="text-white/90">cascade simulation</strong> (what happens if a patient misses their appointment) and <strong className="text-white/90">intervention ranking</strong> (what Uber Health should do right now). Both require human confirmation before any action is logged.</div>

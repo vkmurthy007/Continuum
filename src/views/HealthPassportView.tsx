@@ -45,9 +45,26 @@ export default function HealthPassportView() {
         </div>
       )}
 
-      <div className="flex-1 overflow-hidden flex mt-3">
-        {/* Left: population selector */}
-        <div className="w-48 bg-[#111111] border-r border-white/[0.06] p-4">
+      {/* Mobile: horizontal pill filter */}
+      <div className="md:hidden flex gap-2 px-4 py-3 overflow-x-auto border-b border-white/[0.06] flex-shrink-0">
+        {CONDITIONS.map(c => (
+          <button
+            key={c}
+            onClick={() => setCondition(c)}
+            className={`flex-shrink-0 text-xs px-3 py-1.5 rounded-full transition-colors ${
+              condition === c
+                ? 'bg-white text-black font-medium'
+                : 'bg-white/[0.06] text-white/50 border border-white/[0.08]'
+            }`}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col md:flex-row mt-0 md:mt-3">
+        {/* Left: population selector — desktop only */}
+        <div className="hidden md:block w-48 bg-[#111111] border-r border-white/[0.06] p-4 flex-shrink-0">
           <div className="text-xs text-white/40 uppercase tracking-wider mb-3">Population</div>
           {CONDITIONS.map(c => (
             <button
@@ -75,12 +92,12 @@ export default function HealthPassportView() {
         </div>
 
         {/* Center: signal feed */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 md:overflow-y-auto">
           <SignalFeed records={filtered} />
         </div>
 
         {/* Right: integrations + ROI */}
-        <div className="w-80 border-l border-white/[0.06] overflow-y-auto bg-[#111111]">
+        <div className="md:w-80 md:border-l border-t md:border-t-0 border-white/[0.06] md:overflow-y-auto bg-[#111111]">
           <IntegrationDestinations />
           <ROICalculator />
         </div>

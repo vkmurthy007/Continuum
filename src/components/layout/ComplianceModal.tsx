@@ -29,8 +29,8 @@ const layers = [
 
 export default function ComplianceModal({ onAccept }: Props) {
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-      <div className="bg-[#111111] border border-white/[0.08] rounded-2xl w-full max-w-lg">
+    <div className="fixed inset-0 bg-black/80 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
+      <div className="bg-[#111111] border border-white/[0.08] rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="px-6 pt-6 pb-4 border-b border-white/[0.08]">
           <div className="flex items-center gap-3 mb-1">

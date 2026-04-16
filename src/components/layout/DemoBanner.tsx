@@ -6,9 +6,10 @@ export default function DemoBanner() {
       <Shield size={11} className="text-white/60 flex-shrink-0" />
       <span>
         <span className="text-white font-semibold">DEMO MODE</span>
-        {' '}· All patient data is fictional · No real PHI · AI outputs are advisory only
+        <span className="hidden sm:inline"> · All patient data is fictional · No real PHI · AI outputs are advisory only</span>
+        <span className="sm:hidden"> · Fictional data · No real PHI</span>
       </span>
-      <div className="ml-auto flex items-center gap-1 text-white/25">
+      <div className="ml-auto hidden md:flex items-center gap-1 text-white/25">
         <Lock size={10} />
         <span>Anonymized IDs · Non-reversible hashing simulated</span>
       </div>
