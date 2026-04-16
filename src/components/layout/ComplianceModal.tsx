@@ -1,4 +1,4 @@
-import { Shield, AlertTriangle, Eye, CheckCircle } from 'lucide-react';
+import { Shield, AlertTriangle, Eye, ChevronDown } from 'lucide-react';
 
 interface Props {
   onAccept: () => void;
@@ -29,47 +29,52 @@ const layers = [
 
 export default function ComplianceModal({ onAccept }: Props) {
   return (
-    <div className="bg-black flex flex-col" style={{ minHeight: '100dvh' }}>
-      {/* Flex-col so the button is always visible — content scrolls, button stays pinned */}
-      <div className="bg-[#111111] w-full sm:max-w-lg sm:mx-auto sm:my-auto sm:rounded-2xl flex flex-col flex-1 sm:flex-none sm:border sm:border-white/[0.08]" style={{ minHeight: '100dvh', maxHeight: '100dvh' }}>
-        {/* Scrollable content */}
-        <div className="overflow-y-auto flex-1">
-          {/* Header */}
-          <div className="px-6 pt-6 pb-4 border-b border-white/[0.08]">
-            <div className="flex items-center gap-3 mb-1">
-              <Shield size={20} className="text-white" />
-              <span className="text-white font-semibold text-base">CONTINUUM — Demo Compliance Notice</span>
-            </div>
-            <p className="text-xs text-white/40 leading-relaxed">
-              Before proceeding, please review how this demo handles data and AI outputs.
-            </p>
-          </div>
+    <div className="bg-[#111111] flex flex-col" style={{ minHeight: '100dvh' }}>
 
-          {/* Layers */}
-          <div className="px-6 py-4 space-y-4">
-            {layers.map((layer, i) => (
-              <div key={i} className="flex gap-3">
-                <div className="mt-0.5 flex-shrink-0">{layer.icon}</div>
-                <div>
-                  <div className="text-sm font-medium text-white/90 mb-0.5">{layer.title}</div>
-                  <p className="text-xs text-white/40 leading-relaxed">{layer.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Header — always visible at top */}
+      <div className="px-6 pt-8 pb-5 flex-shrink-0">
+        <div className="flex items-center gap-3 mb-1">
+          <Shield size={20} className="text-white flex-shrink-0" />
+          <span className="text-white font-semibold text-base leading-snug">CONTINUUM — Demo Notice</span>
         </div>
-
-        {/* CTA — always visible, never scrolled out of view */}
-        <div className="px-6 pb-6 pt-4 border-t border-white/[0.08] flex-shrink-0">
-          <button
-            onClick={onAccept}
-            className="w-full py-3 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-black"
-          >
-            <CheckCircle size={15} />
-            Enter Demo
-          </button>
-        </div>
+        <p className="text-xs text-white/40 leading-relaxed mt-1">
+          This is a demo using fictional data. AI outputs are advisory only.
+        </p>
       </div>
+
+      {/* Enter Demo button — always above the fold */}
+      <div className="px-6 pb-5 flex-shrink-0">
+        <button
+          onClick={onAccept}
+          className="w-full py-3.5 rounded-2xl text-sm font-semibold bg-white hover:bg-white/90 text-black transition-colors"
+        >
+          Enter Demo
+        </button>
+      </div>
+
+      {/* Scroll hint */}
+      <div className="flex items-center gap-2 px-6 pb-4 flex-shrink-0">
+        <div className="flex-1 h-px bg-white/[0.06]" />
+        <span className="text-xs text-white/20 flex items-center gap-1">
+          <ChevronDown size={11} />
+          Scroll to review compliance details
+        </span>
+        <div className="flex-1 h-px bg-white/[0.06]" />
+      </div>
+
+      {/* Scrollable compliance details */}
+      <div className="flex-1 overflow-y-auto px-6 pb-10 space-y-5">
+        {layers.map((layer, i) => (
+          <div key={i} className="flex gap-3 bg-white/[0.03] border border-white/[0.06] rounded-2xl px-4 py-4">
+            <div className="mt-0.5 flex-shrink-0">{layer.icon}</div>
+            <div>
+              <div className="text-sm font-medium text-white/90 mb-1">{layer.title}</div>
+              <p className="text-xs text-white/40 leading-relaxed">{layer.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
